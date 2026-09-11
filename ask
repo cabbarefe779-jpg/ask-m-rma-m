@@ -1,0 +1,1447 @@
+```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      viewport-fit=cover">
+
+<title>Sana ❤️</title>
+
+<style>
+
+/* =====================================================
+   TEMEL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #ffb8ca 0%,
+            #ff7398 35%,
+            #c52e62 70%,
+            #65132f 100%
+        );
+
+    color: white;
+}
+
+
+/* =====================================================
+   ARKA PLAN IŞIKLARI
+===================================================== */
+
+.glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.28),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+.glow.one {
+    top: -150px;
+    left: -120px;
+}
+
+.glow.two {
+    right: -150px;
+    bottom: -100px;
+    animation-delay: 2s;
+}
+
+@keyframes glowMove {
+
+    from {
+        transform: translate(0,0) scale(1);
+    }
+
+    to {
+        transform: translate(30px,40px) scale(1.2);
+    }
+}
+
+
+/* =====================================================
+   BALONLAR
+===================================================== */
+
+.balloons {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+
+    bottom: -180px;
+
+    width: 72px;
+    height: 88px;
+
+    border-radius:
+        50% 50%
+        47% 47%;
+
+    background:
+        radial-gradient(
+            circle at 30% 23%,
+            rgba(255,255,255,.95) 0%,
+            rgba(255,255,255,.45) 7%,
+            rgba(255,255,255,0) 19%
+        ),
+        radial-gradient(
+            circle at 62% 65%,
+            rgba(0,0,0,.18),
+            transparent 52%
+        ),
+        linear-gradient(
+            135deg,
+            #ff8eae 0%,
+            #ff3e76 48%,
+            #c91550 100%
+        );
+
+    box-shadow:
+        inset -10px -15px 20px rgba(80,0,30,.22),
+        inset 10px 8px 18px rgba(255,255,255,.2),
+        0 8px 25px rgba(70,0,30,.18);
+
+    animation:
+        balloonFloat 17s linear infinite;
+}
+
+/* balon düğümü */
+.balloon::before {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -7px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 13px;
+    height: 12px;
+
+    background: #c91c51;
+
+    clip-path: polygon(
+        50% 100%,
+        0 0,
+        100% 0
+    );
+}
+
+/* ip */
+.balloon::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 95px;
+    left: 50%;
+
+    width: 1px;
+    height: 190px;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.65),
+            rgba(255,255,255,.05)
+        );
+}
+
+.balloon:nth-child(1) {
+    left: 4%;
+    animation-duration: 18s;
+}
+
+.balloon:nth-child(2) {
+    left: 23%;
+    width: 58px;
+    height: 73px;
+    animation-duration: 15s;
+    animation-delay: 3s;
+
+    background:
+        radial-gradient(
+            circle at 30% 22%,
+            rgba(255,255,255,.9),
+            transparent 18%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd1dd,
+            #ff7197,
+            #d51d55
+        );
+}
+
+.balloon:nth-child(3) {
+    left: 45%;
+    width: 82px;
+    height: 98px;
+    animation-duration: 21s;
+    animation-delay: 1s;
+
+    background:
+        radial-gradient(
+            circle at 30% 22%,
+            rgba(255,255,255,.95),
+            transparent 18%
+        ),
+        linear-gradient(
+            135deg,
+            #ff668e,
+            #e62061,
+            #9d123e
+        );
+}
+
+.balloon:nth-child(4) {
+    left: 69%;
+    width: 60px;
+    height: 76px;
+    animation-duration: 16s;
+    animation-delay: 4s;
+
+    background:
+        radial-gradient(
+            circle at 30% 22%,
+            white,
+            transparent 18%
+        ),
+        linear-gradient(
+            135deg,
+            #ffdce6,
+            #ff8daa,
+            #d92c61
+        );
+}
+
+.balloon:nth-child(5) {
+    left: 88%;
+    width: 76px;
+    height: 92px;
+    animation-duration: 19s;
+    animation-delay: 2s;
+}
+
+@keyframes balloonFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(-5deg);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: .9;
+    }
+
+    30% {
+        transform:
+            translateY(-35vh)
+            translateX(25px)
+            rotate(5deg);
+    }
+
+    60% {
+        transform:
+            translateY(-70vh)
+            translateX(-20px)
+            rotate(-5deg);
+    }
+
+    100% {
+        transform:
+            translateY(-125vh)
+            translateX(25px)
+            rotate(6deg);
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   ANA SAYFA
+===================================================== */
+
+.main {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding:
+        max(55px, env(safe-area-inset-top))
+        20px
+        80px
+        20px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   BAŞLIK
+===================================================== */
+
+.intro {
+
+    margin-top: 15px;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(28px, 8vw, 43px);
+
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    text-shadow:
+        0 3px 10px rgba(80,0,30,.4),
+        0 0 25px rgba(255,255,255,.3);
+
+    animation:
+        titleAppear 1.5s ease;
+}
+
+.intro-small {
+
+    display: block;
+
+    margin-top: 12px;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    opacity: .9;
+}
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(-30px)
+            scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================================
+   ZARF
+===================================================== */
+
+.envelope-area {
+
+    width: 100%;
+
+    max-width: 390px;
+
+    margin:
+        55px auto 0;
+
+    perspective: 1000px;
+
+    animation:
+        envelopeAppear 1.4s ease;
+}
+
+.envelope {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 240px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #ffe9ef
+        );
+
+    box-shadow:
+        0 25px 55px rgba(60,0,25,.35),
+        0 0 35px rgba(255,255,255,.25);
+
+    overflow: hidden;
+}
+
+
+/* zarfın alt üçgenleri */
+
+.envelope-left,
+.envelope-right,
+.envelope-bottom {
+
+    position: absolute;
+
+    z-index: 4;
+
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+}
+
+.envelope-left {
+
+    left: 0;
+    bottom: 0;
+
+    border-width:
+        0 0 150px 195px;
+
+    border-color:
+        transparent
+        transparent
+        #ffd8e2
+        transparent;
+}
+
+.envelope-right {
+
+    right: 0;
+    bottom: 0;
+
+    border-width:
+        0 195px 150px 0;
+
+    border-color:
+        transparent
+        #ffcbd8
+        transparent
+        transparent;
+}
+
+
+/* kağıt */
+
+.paper {
+
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 20px;
+
+    width: 84%;
+
+    height: 205px;
+
+    padding: 28px 18px;
+
+    background:
+        linear-gradient(
+            #fffdfa,
+            #fff6f7
+        );
+
+    color: #8d3152;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 5px 15px rgba(80,0,30,.18);
+
+    z-index: 2;
+
+    transition:
+        transform 1.5s cubic-bezier(.2,.8,.2,1);
+
+    font-family: Georgia, serif;
+}
+
+.paper h2 {
+
+    margin: 5px 0 12px;
+
+    font-size: 25px;
+}
+
+.paper p {
+
+    margin: 0;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* zarf kapağı */
+
+.flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        195px solid transparent;
+
+    border-right:
+        195px solid transparent;
+
+    border-top:
+        125px solid #ffb8ca;
+
+    transform-origin: top center;
+
+    transition:
+        transform 1.5s cubic-bezier(.2,.8,.2,1);
+
+    z-index: 6;
+
+    filter:
+        drop-shadow(
+            0 4px 4px
+            rgba(80,0,30,.12)
+        );
+}
+
+
+/* mühür */
+
+.seal {
+
+    position: absolute;
+
+    left: 50%;
+    top: 92px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 8;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ff91ad,
+            #e52a61 60%,
+            #a50e3d
+        );
+
+    box-shadow:
+        0 6px 15px rgba(70,0,25,.3),
+        inset 3px 3px 7px rgba(255,255,255,.3);
+
+    font-size: 28px;
+
+    transition:
+        opacity .5s,
+        transform .8s;
+}
+
+
+/* açıldıktan sonra */
+
+.envelope.open .flap {
+
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+.envelope.open .paper {
+
+    transform:
+        translateY(-145px);
+}
+
+.envelope.open .seal {
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        scale(.3);
+}
+
+
+/* buton */
+
+.open-button {
+
+    margin-top: 28px;
+
+    border: none;
+
+    padding:
+        15px 28px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ffd7e1
+        );
+
+    color: #a3184a;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(60,0,25,.25);
+
+    cursor: pointer;
+
+    transition:
+        transform .2s;
+}
+
+.open-button:active {
+
+    transform: scale(.94);
+}
+
+
+/* =====================================================
+   FOTOĞRAF
+===================================================== */
+
+.photo-section {
+
+    margin:
+        110px auto 0;
+
+    max-width: 390px;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px)
+        scale(.9);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.photo-section.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.photo-title {
+
+    font-family: Georgia, serif;
+
+    font-size: 26px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 3px 10px rgba(80,0,30,.3);
+}
+
+.photo-frame {
+
+    position: relative;
+
+    width:
+        min(85vw, 340px);
+
+    aspect-ratio: 1 / 1;
+
+    margin: auto;
+
+    padding: 8px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #ffd6e1,
+            #fff
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(60,0,25,.4),
+
+        0 0 35px
+        rgba(255,255,255,.3);
+}
+
+.photo-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 17px;
+}
+
+
+/* fotoğraf üstündeki parlama */
+
+.photo-shine {
+
+    position: absolute;
+
+    inset: 8px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            125deg,
+            rgba(255,255,255,.35),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   SENİ SEVİYORUM
+===================================================== */
+
+.love {
+
+    margin-top: 38px;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(42px, 11vw, 65px);
+
+    font-weight: bold;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 15px #ffb0c4,
+        0 0 30px #ff3168,
+        0 8px 20px rgba(60,0,25,.4);
+
+    animation:
+        lovePulse 1.8s infinite;
+}
+
+@keyframes lovePulse {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+}
+
+
+/* =====================================================
+   GERÇEKÇİ PARLAK KALPLER
+===================================================== */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -70px;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    width: 28px;
+    height: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb0c3 0%,
+            #ff315f 42%,
+            #c40842 100%
+        );
+
+    transform:
+        rotate(-45deg);
+
+    border-radius:
+        6px 0 6px 0;
+
+    box-shadow:
+        -4px -4px 10px
+        rgba(255,255,255,.35)
+        inset,
+
+        0 6px 15px
+        rgba(70,0,25,.25);
+
+    animation:
+        heartFloat 7s linear forwards;
+}
+
+
+/* kalbin üst iki lobu */
+
+.floating-heart::before,
+.floating-heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background:
+        inherit;
+
+    box-shadow:
+        inherit;
+}
+
+.floating-heart::before {
+
+    top: -14px;
+    left: 0;
+}
+
+.floating-heart::after {
+
+    top: 0;
+    left: 14px;
+}
+
+
+/* parlaklık */
+
+.floating-heart .shine {
+
+    position: absolute;
+
+    z-index: 2;
+
+    width: 7px;
+    height: 12px;
+
+    left: 7px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .75;
+
+    filter: blur(1px);
+
+    transform: rotate(45deg);
+}
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(-45deg)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(-55vh)
+            translateX(35px)
+            rotate(-25deg)
+            scale(1);
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh)
+            translateX(-30px)
+            rotate(-5deg)
+            scale(1.15);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   GÜLLER
+===================================================== */
+
+.rose {
+
+    position: fixed;
+
+    bottom: -100px;
+
+    z-index: 18;
+
+    pointer-events: none;
+
+    font-size: 48px;
+
+    filter:
+        drop-shadow(
+            0 7px 8px
+            rgba(60,0,20,.35)
+        );
+
+    animation:
+        roseFloat 9s linear forwards;
+}
+
+@keyframes roseFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(-20deg)
+            scale(.45);
+
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(-55vh)
+            translateX(35px)
+            rotate(15deg)
+            scale(.9);
+    }
+
+    100% {
+
+        transform:
+            translateY(-120vh)
+            translateX(-30px)
+            rotate(30deg)
+            scale(1.1);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media (max-width: 430px) {
+
+    .main {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .envelope {
+        height: 225px;
+    }
+
+    .flap {
+        border-left-width: 50vw;
+        border-right-width: 50vw;
+        border-top-width: 115px;
+    }
+
+    .envelope-left {
+        border-width:
+            0 0 140px 50vw;
+    }
+
+    .envelope-right {
+        border-width:
+            0 50vw 140px 0;
+    }
+
+    .paper {
+        height: 195px;
+    }
+
+    .paper p {
+        font-size: 15px;
+    }
+
+    .photo-section {
+        margin-top: 100px;
+    }
+}
+
+
+/* =====================================================
+   KÜÇÜK EKRAN
+===================================================== */
+
+@media (max-height: 700px) {
+
+    .main {
+        padding-top: 35px;
+    }
+
+    .intro {
+        font-size: 27px;
+    }
+
+    .envelope-area {
+        margin-top: 40px;
+    }
+
+    .envelope {
+        height: 205px;
+    }
+
+    .paper {
+        height: 180px;
+        padding: 20px 15px;
+    }
+
+    .paper h2 {
+        font-size: 22px;
+    }
+
+    .paper p {
+        font-size: 14px;
+    }
+
+    .photo-section {
+        margin-top: 85px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ARKA PLAN IŞIKLARI -->
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+
+<!-- BALONLAR -->
+
+<div class="balloons">
+
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+</div>
+
+
+<!-- ANA İÇERİK -->
+
+<main class="main">
+
+
+    <!-- BAŞLIK -->
+
+    <div class="intro">
+
+        Sana bir şey söylemek istiyorum ❤️
+
+        <span class="intro-small">
+            Kalbimden gelen küçük bir mektup...
+        </span>
+
+    </div>
+
+
+    <!-- ZARF -->
+
+    <div class="envelope-area">
+
+        <div class="envelope" id="envelope">
+
+
+            <!-- KAĞIT -->
+
+            <div class="paper">
+
+                <h2>
+                    Sevgilim ❤️
+                </h2>
+
+                <p>
+                    Hayatımda olduğun için çok mutluyum.
+                    Seninle geçirdiğim her an benim için
+                    çok özel.
+                    <br><br>
+                    İyi ki varsın,
+                    iyi ki hayatımdasın... 💕
+                </p>
+
+            </div>
+
+
+            <!-- ZARF ÜÇGENLERİ -->
+
+            <div class="envelope-left"></div>
+            <div class="envelope-right"></div>
+
+
+            <!-- KAPAK -->
+
+            <div class="flap"></div>
+
+
+            <!-- KALPLİ MÜHÜR -->
+
+            <div class="seal">
+                ❤️
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="open-button"
+            id="openButton">
+
+            💌 Mektubu Aç
+
+        </button>
+
+    </div>
+
+
+    <!-- FOTOĞRAF -->
+
+    <section
+        class="photo-section"
+        id="photoSection">
+
+        <div class="photo-title">
+
+            Bizim hikâyemiz ❤️
+
+        </div>
+
+
+        <div class="photo-frame">
+
+            <!-- FOTOĞRAFINI biz.jpg OLARAK KOY -->
+
+            <img
+                src="biz.jpg"
+                alt="Bizim fotoğrafımız">
+
+            <div class="photo-shine"></div>
+
+        </div>
+
+
+        <!-- SON YAZI -->
+
+        <div class="love">
+
+            Seni Seviyorum ❤️
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   MEKTUP AÇMA
+===================================================== */
+
+const envelope =
+    document.getElementById("envelope");
+
+const button =
+    document.getElementById("openButton");
+
+const photoSection =
+    document.getElementById("photoSection");
+
+
+button.addEventListener("click", function() {
+
+    envelope.classList.add("open");
+
+    button.style.opacity = "0";
+
+    button.style.pointerEvents = "none";
+
+    setTimeout(function() {
+
+        photoSection.classList.add("show");
+
+        photoSection.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 1300);
+
+});
+
+
+/* =====================================================
+   GERÇEKÇİ KALP ÜRET
+===================================================== */
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    const shine =
+        document.createElement("div");
+
+    shine.className =
+        "shine";
+
+    heart.appendChild(shine);
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    const size =
+        18 + Math.random() * 22;
+
+    heart.style.width =
+        size + "px";
+
+    heart.style.height =
+        size + "px";
+
+    heart.style.animationDuration =
+        5 + Math.random() * 5 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 11000);
+
+}
+
+
+/* =====================================================
+   GÜL ÜRET
+===================================================== */
+
+function createRose() {
+
+    const rose =
+        document.createElement("div");
+
+    rose.className =
+        "rose";
+
+    rose.innerHTML =
+        "🌹";
+
+    rose.style.left =
+        Math.random() * 100 + "vw";
+
+    rose.style.fontSize =
+        32 + Math.random() * 35 + "px";
+
+    rose.style.animationDuration =
+        7 + Math.random() * 5 + "s";
+
+    document.body.appendChild(rose);
+
+    setTimeout(function() {
+
+        rose.remove();
+
+    }, 13000);
+
+}
+
+
+/* =====================================================
+   BAŞLANGIÇ EFEKTLERİ
+===================================================== */
+
+for (
+    let i = 0;
+    i < 15;
+    i++
+) {
+
+    setTimeout(
+        createHeart,
+        i * 180
+    );
+
+}
+
+
+for (
+    let i = 0;
+    i < 8;
+    i++
+) {
+
+    setTimeout(
+        createRose,
+        i * 350
+    );
+
+}
+
+
+/* =====================================================
+   SÜREKLİ EFEKTLER
+===================================================== */
+
+setInterval(
+    createHeart,
+    550
+);
+
+setInterval(
+    createRose,
+    900
+);
+
+</script>
+
+
+</body>
+</html>
+```
